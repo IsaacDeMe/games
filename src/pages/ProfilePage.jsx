@@ -456,7 +456,7 @@ const ProfilePage = () => {
     try {
       await logout();
       toast({ title: 'Sesión Cerrada', description: 'Has cerrado sesión correctamente.' });
-      navigate('/');
+      navigate('');
     } catch (error) {
       toast({ title: 'Error al Cerrar Sesión', description: error.message || 'No se pudo cerrar la sesión.', variant: 'destructive' });
     }
