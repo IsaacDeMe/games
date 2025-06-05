@@ -10,7 +10,7 @@ import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import AdminRoute from '@/components/AdminRoute';
 import { Toaster } from '@/components/ui/toaster';
-import {ScrollToTop} from '@/components/ui/ScrollToTop';
+import ScrollToTop from '@/components/ui/ScrollToTop';
 
 const App = () => {
   return (
