@@ -8,12 +8,12 @@ const HistoriaSection = () => {
         <div className="flex flex-col gap-8 items-center">
 
           {/* Título con animación desde abajo */}
-          <motion.h2
-            className="text-4xl md:text-5xl font-bold mb-6"
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: 'easeOut' }}
-          >
+         <motion.h2
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-5xl md:text-7xl font-bold mb-6"
+        >
             Mi Historia
           </motion.h2>
 
