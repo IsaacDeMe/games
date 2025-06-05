@@ -75,7 +75,7 @@ const LoginPage = () => {
     setIsFormLoading(true);
     try {
       const { error } = await supabase.auth.resetPasswordForEmail(email, {
-        redirectTo: `isaacgames.netlify.app/actualizar-contrasena`,
+        redirectTo: `isaacgames.netlify.app/reset-pasword`,
       });
       if (error) throw error;
       toast({
