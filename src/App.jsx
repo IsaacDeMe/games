@@ -15,7 +15,7 @@ import {ScrollToTop} from '@/components/ui/ScrollToTop';
 const App = () => {
   return (
     <Router>
-<ScrollToTop/>
+<ScrollToTop />
       <AuthProvider>
         <div className="flex flex-col min-h-screen bg-white text-black">
           <Navigation /> {/* Navegación siempre visible */}
