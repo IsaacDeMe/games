@@ -11,6 +11,8 @@ import Footer from '@/components/Footer';
 import AdminRoute from '@/components/AdminRoute';
 import { Toaster } from '@/components/ui/toaster';
 import ScrollToTop from '@/components/ui/ScrollToTop';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import ResetPassword from './pages/ResetPassword';
 
 const App = () => {
   return (
@@ -24,6 +26,8 @@ const App = () => {
               <Route path="/" element={<LandingPage />} />
               <Route path="/crear-cuenta" element={<SignUpPage />} />
               <Route path="/login" element={<LoginPage />} />
+     <Route path="/reset-password" element={<ResetPasword />} />
+
 
               {/* Ruta protegida para usuarios autenticados */}
               <Route
