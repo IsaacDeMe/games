@@ -29,13 +29,13 @@ const Footer = () => {
             <span className="text-xl font-bold mb-4 block">Redes Sociales</span>
             <div className="space-y-2">
               <a 
-                href="https://instagram.com/isaacdelfa" 
+                href="https://instagram.com/isaaacdelfa" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="flex items-center hover:text-gray-300 transition-colors"
               >
                 <Instagram className="w-5 h-5 mr-2" />
-                @isaacdelfa
+                @isaaacdelfa
               </a>
               <a 
                 href="https://tiktok.com/@isaacdelfamedina" 
