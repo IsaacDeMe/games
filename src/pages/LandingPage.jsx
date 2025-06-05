@@ -1,6 +1,5 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { MessageCircle } from 'lucide-react';
 import Navigation from '@/components/Navigation';
 import HeroSection from '@/components/HeroSection';
 import HistoriaSection from '@/components/HistoriaSection';
@@ -30,7 +29,7 @@ const LandingPage = () => {
         onClick={openWhatsApp}
         className="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg z-50 transition-colors"
       >
-        <MessageCircle className="w-8 h-8" />
+       
       </motion.button>
     </div>
   );
