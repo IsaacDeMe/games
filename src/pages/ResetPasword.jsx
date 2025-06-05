@@ -3,7 +3,6 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { supabase } from '@/lib/supabaseClient';
 
-
 export default function ResetPassword() {
   const [pass1, setPass1] = useState('')
   const [pass2, setPass2] = useState('')
@@ -64,4 +63,41 @@ export default function ResetPassword() {
             value={pass2}
             onChange={(e) => setPass2(e.target.value)}
             required
+            style={{ width: '100%', padding: '12px', margin: '10px 0' }}
+          />
+          <button
+            type="submit"
             style={{
+              width: '100%',
+              padding: '12px',
+              backgroundColor: '#007bff',
+              color: 'white',
+              border: 'none',
+              borderRadius: '6px',
+              cursor: 'pointer'
+            }}
+          >
+            Cambiar
+          </button>
+        </form>
+
+        {message && (
+          <div style={{
+            marginTop: '15px',
+            padding: '12px',
+            borderRadius: '6px',
+            backgroundColor: error ? '#ff4d4d' : '#4caf50',
+            color: 'white',
+            textAlign: 'center'
+          }}>
+            {message}
+          </div>
+        )}
+      </div>
+
+      <footer style={{ background: '#333', color: 'white', padding: '1rem', textAlign: 'center' }}>
+        © 2025 — Hecho por Isaac con 💻 y mucho café ☕
+      </footer>
+    </div>
+  )
+}
