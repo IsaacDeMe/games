@@ -8,10 +8,7 @@ import FuncionamientoSection from '@/components/FuncionamientoSection';
 import Footer from '@/components/Footer';
 
 const LandingPage = () => {
-  const openWhatsApp = () => {
-    const message = encodeURIComponent("Hola soy ... tengo una duda de ...");
-    window.open(`https://wa.me/34642571133?text=${message}`, '_blank');
-  };
+  
 
   return (
     <div className="min-h-screen bg-white pb-8 text-gray-900">
