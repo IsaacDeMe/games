@@ -227,7 +227,7 @@ const MessageGeneratorForm = () => {
           
           <Button 
             onClick={copyToClipboardAndOpenGroup}
-            className="w-full bg-green-500 hover:bg-green-600 text-white py-3 text-lg h-11"
+            className="w-full bg-green-500 hover:bg-green-600 text-white py-3 text-lg h-17"
             size="lg"
             disabled={!generatedMessage}
           >
