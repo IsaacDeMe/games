@@ -130,6 +130,8 @@ const MessageGeneratorForm = () => {
       <div className="w-full lg:w-3/5 mb-8 lg:mb-0">
         <h3 className="text-2xl font-bold mb-6 text-center">Galería de Diseños</h3>
         <ImageGallery currentImageIndex={currentImageIndex} setCurrentImageIndex={setCurrentImageIndex} />
+                <h3 className="text-2xl font-bold mb-6 text-center">PVP 18</h3>
+
       </div>
       
       <div className="w-full lg:w-2/5 space-y-6">
