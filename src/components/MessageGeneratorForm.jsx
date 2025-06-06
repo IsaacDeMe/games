@@ -151,7 +151,7 @@ const MessageGeneratorForm = () => {
           <div>
             <Label htmlFor="size" className="block text-sm font-medium mb-1">Talla</Label>
             <Select value={selectedSize} onValueChange={setSelectedSize}>
-             <SelectTrigger className="w-full max-w-[280] p-3 h-auto text-sm border rounded-md">
+             <SelectTrigger className="w-full max-w-[250] p-3 h-auto text-sm border rounded-md">
 
                 <SelectValue placeholder="Selecciona una talla" />
               </SelectTrigger>
