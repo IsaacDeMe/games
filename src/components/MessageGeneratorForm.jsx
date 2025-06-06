@@ -236,7 +236,7 @@ const MessageGeneratorForm = () => {
             <ExternalLink className="ml-1 w-4 h-4" />
           </Button>
           <p className="text-sm text-gray-600 mt-1 text-center">
-            Genera el mensaje para enviarlo al grupo. Después dale a "Entrar al Grupo y Copiar Mensaje", pega el mensaje y envíalo. Nosotros te añadiremos a la lista. Después, cuando hayas realizado el Bizum al 642571133, avisa por el grupo y te pondremos el icono de pagado.
+            Genera el mensaje para enviarlo al grupo. Después dale a "Entrar al Grupo y Copiar Mensaje", pega el mensaje y envíalo. Nosotros te añadiremos a la lista. Después, cuando hayas realizado el Bizum al 642571133 (18 euros), avisa por el grupo y te pondremos el icono de pagado.
           </p>
         </div>
       </div>
