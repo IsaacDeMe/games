@@ -44,13 +44,13 @@ const ReservaSection = () => {
               </p>
               <p>
                 <strong>Para personas de fuera:</strong> Si estás en un box que promociona la camiseta, 
-                escribe el nombre del box en el formulario para que podamos enviar todas las camisetas juntas 
+                escribe el nombre del box en el formulario para que podamos enviar todas las camisetas del mismo box juntas 
                 desde Wallapop. Esto hará que el envío sea más económico.
               </p>
               <p>
                 Si eres una persona particular que ha visto el anuncio, escribe tu dirección en el formulario 
-                y realiza un Bizum de <span className="font-bold text-green-600">17 euros</span>. Cuando tengamos las camisetas, 
-                crearemos un producto en Wallapop de <span className="font-bold text-green-600">1 euro</span> para gestionar el envío.
+                y realiza un Bizum de <span className="font-bold text-green-600">16 euros</span>. Cuando tengamos las camisetas, 
+                crearemos un producto en Wallapop de <span className="font-bold text-green-600">2 euro</span> para gestionar el envío.
               </p>
             </div>
           </motion.div>
