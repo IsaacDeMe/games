@@ -127,37 +127,16 @@ const MessageGeneratorForm = () => {
 
   return (
     <>
-      <div className="mb-8">
-        <h2 className="text-2xl font-bold mb-4 text-center">Información de Funcionamiento</h2>
-        <ol className="list-decimal pl-5 space-y-2">
-          <li>Elige la imagen del diseño que te gusta y rellena la información solicitada.</li>
-          <li>Haz clic en "Generar Mensaje" y luego en el botón "Entrar al Grupo".</li>
-          <li>Dentro del grupo, pega el mensaje generado para que podamos añadirte a la lista.</li>
-          <li>Una vez realizado el pago, avísanos por el grupo. Confirmaremos tu pago y te marcaremos como pagado.</li>
-        </ol>
-      </div>
-
-      <div className="mb-8">
+      <div className="w-full lg:w-3/5 mb-8 lg:mb-0">
         <h3 className="text-2xl font-bold mb-6 text-center">Galería de Diseños</h3>
         <ImageGallery currentImageIndex={currentImageIndex} setCurrentImageIndex={setCurrentImageIndex} />
-        <h3 className="text-2xl font-bold mb-6 text-center">PVP: 18 euros</h3>
-      </div>
+                <h3 className="text-2xl font-bold mb-6 text-center">PVP 18</h3>
 
-      <div className="mb-8">
-        <h3 className="text-2xl font-bold">Detalles de Pago</h3>
-        <p className="text-sm text-gray-600 mb-4">
-          Para personas locales (El Vendrell, Torredembarra, Calafell y alrededores), el Bizum será de 18 euros, el coste total de la camiseta.
-        </p>
-        <p className="text-sm text-gray-600 mb-4">
-          Para personas fuera de estas áreas: Si estás en un box que promociona la camiseta, indícalo en el campo "De dónde eres". Coordinaremos el envío grupal desde Wallapop para reducir costos.
-        </p>
-        <p className="text-sm text-gray-600">
-          Si eres particular y no estás en un box, indica tu dirección en el formulario. Haz un Bizum de 17 euros y coordinaremos el envío individual mediante Wallapop por 1 euro adicional.
-        </p>
       </div>
-
+      
       <div className="w-full lg:w-2/5 space-y-6">
         <h3 className="text-2xl font-bold">Mensaje para el grupo</h3>
+        
         <div className="space-y-4">
           <div>
             <Label htmlFor="name" className="block text-sm font-medium mb-1">Nombre</Label>
@@ -174,7 +153,8 @@ const MessageGeneratorForm = () => {
           <div>
             <Label htmlFor="size" className="block text-sm font-medium mb-1">Talla</Label>
             <Select value={selectedSize} onValueChange={setSelectedSize}>
-              <SelectTrigger className="w-full max-w-[250] p-3 h-auto text-sm border rounded-md">
+             <SelectTrigger className="w-full max-w-[250] p-3 h-auto text-sm border rounded-md">
+
                 <SelectValue placeholder="Selecciona una talla" />
               </SelectTrigger>
               <SelectContent>
@@ -212,9 +192,9 @@ const MessageGeneratorForm = () => {
               readOnly
               className="w-full p-3 bg-gray-100 cursor-not-allowed h-10"
             />
-            <p className="text-xs text-gray-500 mt-1">(Pasa la imagen hasta el diseño que te gusta)</p>
+             <p className="text-xs text-gray-500 mt-1">(Pasa la imagen hasta el diseño que te gusta)</p>
           </div>
-
+          
           <div>
             <Label htmlFor="location" className="block text-sm font-medium mb-1">¿Eres de aquí o de fuera? ¿De dónde?</Label>
             <Input
@@ -247,7 +227,7 @@ const MessageGeneratorForm = () => {
               />
             </div>
           )}
-
+          
           <Button 
             onClick={copyToClipboardAndOpenGroup}
             className="w-full bg-green-500 hover:bg-green-600 text-white py-3 text-lg h-15"
