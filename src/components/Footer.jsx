@@ -16,6 +16,8 @@ const Footer = () => {
               <button onClick={() => scrollToSection('historia')} className="block hover:text-gray-300 transition-colors">
                 Mi Historia
               </button>
+              <button onClick={() => scrollToSection('reserva')} className="block hover:text-gray-300 transition-colors">
+                Funcionamiento de la reserva, envío,pago...             </button>
               <button onClick={() => scrollToSection('camisetas')} className="block hover:text-gray-300 transition-colors">
                 Camisetas
               </button>

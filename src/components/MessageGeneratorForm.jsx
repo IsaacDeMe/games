@@ -14,10 +14,11 @@ import {
 import { useToast } from '@/components/ui/use-toast';
 
 const galleryImages = [
-  'https://storage.googleapis.com/hostinger-horizons-assets-prod/2f2824b7-ecd0-4c8d-aa7c-77ae22631a7c/b10d0ca07d623e508ac41440292fcba4.png',
-  'https://storage.googleapis.com/hostinger-horizons-assets-prod/2f2824b7-ecd0-4c8d-aa7c-77ae22631a7c/e52a0d99982c89b4fd38f1a3a0493f84.png',
-  'https://storage.googleapis.com/hostinger-horizons-assets-prod/2f2824b7-ecd0-4c8d-aa7c-77ae22631a7c/600a85d2ea91b416610f2b85351ea5d4.png',
-  'https://storage.googleapis.com/hostinger-horizons-assets-prod/2f2824b7-ecd0-4c8d-aa7c-77ae22631a7c/95184e37ed36a78a6055b8862d028ce3.png'
+  'https://storage.googleapis.com/hostinger-horizons-assets-prod/2f2824b7-ecd0-4c8d-aa7c-77ae22631a7c/205fd6e48db4cdffc704e6eb8e61bc2f.png',
+  'https://storage.googleapis.com/hostinger-horizons-assets-prod/2f2824b7-ecd0-4c8d-aa7c-77ae22631a7c/64be2c31d725ca01a0494ce8587bddbd.jpg',
+  'https://storage.googleapis.com/hostinger-horizons-assets-prod/2f2824b7-ecd0-4c8d-aa7c-77ae22631a7c/f40a46bb34dab59dbe71d5eeaaf661d6.jpg',
+  'https://storage.googleapis.com/hostinger-horizons-assets-prod/2f2824b7-ecd0-4c8d-aa7c-77ae22631a7c/d626d5ed220fb8bbcda5b5c312d9da48.png',
+
 ];
 
 const imageDetails = [
@@ -129,7 +130,7 @@ const MessageGeneratorForm = () => {
     <>
       <div className="w-full lg:w-3/5 mb-8 lg:mb-0">
         <h3 className="text-2xl font-bold mb-6 text-center">Galería de Diseños</h3>
-                  <h3 className="text-2xl font-bold mb-6 text-center">PVP 18</h3>
+                  <h3 className="text-2xl font-bold mb-6 text-center text-green-600">PVP 18€</h3>
 
         <ImageGallery currentImageIndex={currentImageIndex} setCurrentImageIndex={setCurrentImageIndex} />
 

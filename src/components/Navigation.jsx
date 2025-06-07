@@ -33,16 +33,17 @@ const Navigation = () => {
 
   const navItems = [
     { label: 'Mi Historia', section: 'historia' },
+    { label: 'Funcionamiento de la Reserva', section: 'reserva' } ,// Nuevo elemento
     { label: 'Camisetas', section: 'camisetas' },
-    { label: 'Guía de Tallas', section: 'guia-tallas' }
+    { label: 'Guía de Tallas', section: 'guia-tallas' },
   ];
 
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (menuRef.current && !menuRef.current.contains(event.target) && event.target.closest('nav') === null) {
-         if (!event.target.closest('button[aria-label="Toggle menu"]')) {
-            setMobileMenuOpen(false);
-         }
+        if (!event.target.closest('button[aria-label="Toggle menu"]')) {
+          setMobileMenuOpen(false);
+        }
       }
     };
     if (mobileMenuOpen) {
@@ -62,7 +63,7 @@ const Navigation = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="md:hidden flex items-center">
-             <button
+            <button
               aria-label="Toggle menu"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="p-2 z-[110]"
@@ -87,9 +88,7 @@ const Navigation = () => {
             ))}
           </div>
           
-          <div className="md:hidden w-8"> {/* Placeholder para equilibrar el espacio en móvil */}
-          </div>
-
+          <div className="md:hidden w-8"> {/* Placeholder para equilibrar el espacio en móvil */}</div>
         </div>
       </div>
 

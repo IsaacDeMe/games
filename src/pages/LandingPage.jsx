@@ -4,6 +4,8 @@ import HeroSection from '@/components/HeroSection';
 import HistoriaSection from '@/components/HistoriaSection';
 import CamisetasSection from '@/components/CamisetasSection';
 import Footer from '@/components/Footer';
+import ReservaSection from '@/components/funcionamientoreserva';
+
 import { Toaster } from "@/components/ui/toaster";
 
 const LandingPage = () => {
@@ -12,6 +14,7 @@ const LandingPage = () => {
       <Navigation />
       <HeroSection />
       <HistoriaSection />
+      <ReservaSection />
       <CamisetasSection />
       <Footer />
       <Toaster />
