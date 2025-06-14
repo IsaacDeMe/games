@@ -36,6 +36,10 @@ const ReservaSection = () => {
             className="my-8 md:my-12"
           >
             <h3 className="text-2xl font-semibold mb-4 text-center">Información de Pago</h3>
+              <p>
+                bizum al numero 647709145
+                <span className="font-bold text-green-600"> 18 euros</span>.
+              </p>
             <div className="text-lg text-gray-700 leading-relaxed space-y-6">
               <p>
                 <strong>Para personas locales:</strong> Si vives en El Vendrell (43700) o pueblos cercanos 
@@ -43,14 +47,9 @@ const ReservaSection = () => {
                 <span className="font-bold text-green-600"> 18 euros</span>.
               </p>
               <p>
-                <strong>Para personas de fuera:</strong> Si estás en un box que promociona la camiseta, 
-                escribe el nombre del box en el formulario para que podamos enviar todas las camisetas del mismo box juntas 
-                desde Wallapop. Esto hará que el envío sea más económico.
-              </p>
-              <p>
-                Si eres una persona particular que ha visto el anuncio, escribe tu dirección en el formulario 
+                Si eres una persona de fuera, escribe tu dirección en el formulario 
                 y realiza un Bizum de <span className="font-bold text-green-600">16 euros</span>. Cuando tengamos las camisetas, 
-                crearemos un producto en Wallapop de <span className="font-bold text-green-600">2 euro</span> para gestionar el envío.
+                crearemos un producto en Wallapop de <span className="font-bold text-green-600">2 euro</span> para gestionar el envío. Si varias personsa de tu box piden una cmiseta, poner el nombre del box en direccion de envio asi las podremos enviar todas juntas, saliendo aun mas económico.
               </p>
             </div>
           </motion.div>
