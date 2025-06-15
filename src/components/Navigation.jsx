@@ -31,12 +31,14 @@ const Navigation = () => {
     }
   }, [location, navigate]);
 
-  const navItems = [
-    { label: 'Mi Historia', section: 'historia' },
-    { label: 'Funcionamiento de la Reserva', section: 'reserva' } ,// Nuevo elemento
-    { label: 'Camisetas', section: 'camisetas' },
-    { label: 'Guía de Tallas', section: 'guia-tallas' },
-  ];
+ const navItems = [
+  { label: 'Mi Historia', section: 'historia' },
+  { label: 'Funcionamiento de la Reserva', section: 'reserva' } ,// Nuevo elemento
+  { label: 'Camisetas', section: 'camisetas' },
+  { label: 'Guía de Tallas', section: 'guia-tallas' },
+  { label: 'Colaborar', section: 'colaborar' }, // Nueva sección
+];
+
 
   useEffect(() => {
     const handleClickOutside = (event) => {

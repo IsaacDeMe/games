@@ -3,6 +3,7 @@ import Navigation from '@/components/Navigation';
 import HeroSection from '@/components/HeroSection';
 import HistoriaSection from '@/components/HistoriaSection';
 import CamisetasSection from '@/components/CamisetasSection';
+import ColaborarSinComprarSection from '@/components/ColaborarSinComprarSection';
 import Footer from '@/components/Footer';
 import ReservaSection from '@/components/funcionamientoreserva';
 
@@ -16,6 +17,7 @@ const LandingPage = () => {
       <HistoriaSection />
       <ReservaSection />
       <CamisetasSection />
+      <ColaborarSinComprarSection /> {/* Nueva sección */}
       <Footer />
       <Toaster />
     </div>
