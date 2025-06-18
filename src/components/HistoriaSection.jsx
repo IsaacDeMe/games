@@ -42,40 +42,7 @@ const HistoriaSection = () => {
               Porqué confío en la fuerza de la comunidad, que siempre ha demostrado ser un pilar fundamental para los atletas como yo. ¡Gracias por tu apoyo!
             </p>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold mb-8 text-center">
-                      Colabora por esta causa, y ayúdame a ir a games
-                    </h2>
-                    <div className="text-lg text-gray-700 leading-relaxed space-y-6 text-center">
-                   
-                      <div className="flex justify-center space-x-4">
-                        <a
-                          href='/donacion'
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="bg-blue-600 text-white px-6 py-3 rounded-lg shadow-md hover:bg-blue-700 transition"
-                        >
-                          Apóyame
-                        </a>
-                        <a
-                          href="https://wod4dreams.es"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="bg-green-600 text-white px-6 py-3 rounded-lg shadow-md hover:bg-green-700 transition"
-                        >
-                          Más Información del Evento
-                        </a>
-                           <a 
-
-                          href="/camiseta"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="bg-gray-600 text-white px-6 py-3 rounded-lg shadow-md hover:bg-green-700 transition"
-                        >
-                          Camisetas
-                        </a>
-                      </div>
-                   
-                    </div>
+         
         </motion.div>
       </div>
     </section>

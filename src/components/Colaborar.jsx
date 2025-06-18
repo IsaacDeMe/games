@@ -20,14 +20,15 @@ const Colaborar = () => {
               Sabemos que no todo el mundo, vive cerca para venir a competir, o puede permitirse comprar una camiseta. Por eso hemos buscado dar todas las opciones para todo el mundo que quiera colaborar, pueda hacerlo!!
             </p>
             <div className="flex justify-center space-x-4">
-              <Link to="/donaciones"
+              <a 
+                href='/donacion'
                 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-blue-600 text-white px-6 py-3 rounded-lg shadow-md hover:bg-blue-700 transition"
               >
                 Apóyame
-              </Link>
+              </a>
               <a
                 href="https://wod4dreams.es"
                 target="_blank"
@@ -36,14 +37,14 @@ const Colaborar = () => {
               >
                 Más Información del Evento
               </a>
-                 <Link to="/camiseta"
-                href="https://wod4dreams.es"
+                 <a 
+                href="/camiseta"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-gray-600 text-white px-6 py-3 rounded-lg shadow-md hover:bg-green-700 transition"
+                className="bg-gray-600 text-white px-6 py-3 rounded-lg shadow-md hover:bg-gray-700 transition"
               >
                 Camisetas
-              </Link>
+              </a>
             </div>
          
           </div>
