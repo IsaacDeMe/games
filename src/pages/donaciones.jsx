@@ -55,7 +55,7 @@ const DonacionesPage = () => {
                 <input
                   type="range"
                   min="0"
-                  max="50"
+                  max="10"
                   step="0.01"
                   value={customAmount ? 0 : amount}
                   onChange={handleAmountChange}

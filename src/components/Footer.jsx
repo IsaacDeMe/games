@@ -10,23 +10,44 @@ const Footer = () => {
     <footer className="bg-black text-white py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-3 gap-8">
-          <div>
+  
+<div>
   <span className="text-xl font-bold mb-4 block">Navegación</span>
   <div className="space-y-2">
-    <button onClick={() => window.open('https://isaacgames.es', '_blank')} className="block hover:text-gray-300 transition-colors">
+    {/* Sobre Mí */}
+    <button
+      onClick={() => navigate('/')}
+      className="block hover:text-gray-300 transition-colors"
+    >
       Sobre Mí
     </button>
-    <button onClick={() => navigate('/camiseta')} className="block hover:text-gray-300 transition-colors">
+
+    {/* Camisetas */}
+    <button
+      onClick={() => navigate('/camiseta')}
+      className="block hover:text-gray-300 transition-colors"
+    >
       Camisetas
     </button>
-    <button onClick={() => window.open('https://wod4dreams.es', '_blank')} className="block hover:text-gray-300 transition-colors">
+
+    {/* Competición */}
+    <button
+      onClick={() => window.open('https://wod4dreams.es', '_blank')}
+      className="block hover:text-gray-300 transition-colors"
+    >
       Competición
     </button>
-    <button onClick={() => navigate('/donacion')} className="block hover:text-gray-300 transition-colors">
+
+    {/* Donaciones */}
+    <button
+      onClick={() => navigate('/donacion')}
+      className="block hover:text-gray-300 transition-colors"
+    >
       Donaciones
     </button>
   </div>
 </div>
+
 
           <div>
             <span className="text-xl font-bold mb-4 block">Redes Sociales</span>
