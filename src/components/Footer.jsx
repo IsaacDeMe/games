@@ -1,69 +1,76 @@
 import React from 'react';
 import { Instagram, MessageCircle, Mail, Phone } from 'lucide-react';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 const Footer = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+
   const scrollToSection = (sectionId) => {
-    document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
+    if (sectionId === 'competicion') {
+      window.open('https://wod4dreams.es', '_blank');
+    } else if (sectionId === 'donacion' || sectionId === 'camiseta') {
+      navigate(`/${sectionId}`);
+    } else {
+      if (location.pathname !== '/') {
+        navigate('/', { state: { scrollTo: sectionId } });
+      } else {
+        document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
   };
 
   return (
     <footer className="bg-black text-white py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-3 gap-8">
-  
-<div>
-  <span className="text-xl font-bold mb-4 block">Navegación</span>
-  <div className="space-y-2">
-    {/* Sobre Mí */}
-    <button
-      onClick={() => navigate('/')}
-      className="block hover:text-gray-300 transition-colors"
-    >
-      Sobre Mí
-    </button>
+          {/* Navegación */}
+          <div>
+            <span className="text-xl font-bold mb-4 block">Navegación</span>
+            <div className="space-y-2">
+              <button
+                onClick={() => scrollToSection('historia')}
+                className="block hover:text-gray-300 transition-colors"
+              >
+                Sobre Mí
+              </button>
+              <button
+                onClick={() => scrollToSection('camiseta')}
+                className="block hover:text-gray-300 transition-colors"
+              >
+                Camisetas
+              </button>
+              <button
+                onClick={() => scrollToSection('competicion')}
+                className="block hover:text-gray-300 transition-colors"
+              >
+                Competición
+              </button>
+              <button
+                onClick={() => scrollToSection('donacion')}
+                className="block hover:text-gray-300 transition-colors"
+              >
+                Donaciones
+              </button>
+            </div>
+          </div>
 
-    {/* Camisetas */}
-    <button
-      onClick={() => navigate('/camiseta')}
-      className="block hover:text-gray-300 transition-colors"
-    >
-      Camisetas
-    </button>
-
-    {/* Competición */}
-    <button
-      onClick={() => window.open('https://wod4dreams.es', '_blank')}
-      className="block hover:text-gray-300 transition-colors"
-    >
-      Competición
-    </button>
-
-    {/* Donaciones */}
-    <button
-      onClick={() => navigate('/donacion')}
-      className="block hover:text-gray-300 transition-colors"
-    >
-      Donaciones
-    </button>
-  </div>
-</div>
-
-
+          {/* Redes Sociales */}
           <div>
             <span className="text-xl font-bold mb-4 block">Redes Sociales</span>
             <div className="space-y-2">
-              <a 
-                href="https://instagram.com/isaaacdelfa" 
-                target="_blank" 
+              <a
+                href="https://instagram.com/isaaacdelfa"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center hover:text-gray-300 transition-colors"
               >
                 <Instagram className="w-5 h-5 mr-2" />
                 @isaaacdelfa
               </a>
-              <a 
-                href="https://tiktok.com/@isaacdelfamedina" 
-                target="_blank" 
+              <a
+                href="https://tiktok.com/@isaacdelfamedina"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center hover:text-gray-300 transition-colors"
               >
@@ -73,17 +80,18 @@ const Footer = () => {
             </div>
           </div>
 
+          {/* Contacto */}
           <div>
             <span className="text-xl font-bold mb-4 block">Contacto</span>
             <div className="space-y-2">
-              <a 
+              <a
                 href="mailto:isaacdelfamedina@gmail.com"
                 className="flex items-center hover:text-gray-300 transition-colors"
               >
                 <Mail className="w-5 h-5 mr-2" />
                 isaacdelfamedina@gmail.com
               </a>
-              <a 
+              <a
                 href="tel:+34642571133"
                 className="flex items-center hover:text-gray-300 transition-colors"
               >
@@ -97,6 +105,7 @@ const Footer = () => {
           </div>
         </div>
 
+        {/* Copyright */}
         <div className="border-t border-gray-800 mt-8 pt-8 text-center">
           <p className="text-gray-400">
             © 2025 Isaac Delfa Medina. Todos los derechos reservados. Web programada por mí, si algo funciona mal dímelo porfa.

@@ -31,7 +31,7 @@ const DonacionesPage = () => {
   return (
     <div>
       <Navigation />
-      <div className="min-h-screen bg-white text-gray-900 p-6 mb-12">
+      <div className="min-h-screen bg-white text-gray-900 p-6 mb-12 py-20">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center scroll-margin-top-[80px]">
           {/* Video Section */}
           <div>
