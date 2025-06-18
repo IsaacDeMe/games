@@ -1,10 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Navigation from '../components/Navigation';
 import Footer from '@/components/Footer';
 
 const DonacionesPage = () => {
   const [amount, setAmount] = useState(0);
   const [customAmount, setCustomAmount] = useState('');
+
+  useEffect(() => {
+    // Scroll al inicio de la página con margen
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, []);
 
   const handleAmountChange = (e) => {
     if (!customAmount) {
@@ -26,14 +31,14 @@ const DonacionesPage = () => {
   return (
     <div>
       <Navigation />
-      <div className="min-h-screen bg-white text-gray-900 p-6">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+      <div className="min-h-screen bg-white text-gray-900 p-6 mb-12">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center scroll-margin-top-[80px]">
           {/* Video Section */}
           <div>
             <iframe
               width="100%"
               height="315"
-              src="https://www.youtube.com/watch?v=g-0hx_2UU4k"
+              src="https://www.youtube.com/embed/g-0hx_2UU4k"
               title="Video de presentación y agradecimientos"
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -44,7 +49,7 @@ const DonacionesPage = () => {
           {/* Donation Section */}
           <div className="space-y-6">
             <p className="text-lg leading-relaxed">
-              Hola, me llamo <strong>Isaac</strong>, y quiero decirte que para mí contar con tu ayuda es crucial, y de verdad que te lo voy a agradecer. Cualquier donación es suficiente para ayudarme. 
+              Hola, me llamo <strong>Isaac</strong>, y quiero decirte que para mí contar con tu ayuda es crucial, y de verdad que te lo voy a agradecer. Cualquier donación es suficiente para ayudarme.
               <br />
               <strong>No te pido que me dones ni un euro.</strong> La unión hace la fuerza, y con la ayuda de muchos, podré alcanzar mi meta. Muchas gracias de corazón.
             </p>

@@ -12,36 +12,43 @@ const Colaborar = () => {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-8 text-center">
-            Colabora por esta causa, y ayúdame a ir a games
-          </h2>
-          <div className="text-lg text-gray-700 leading-relaxed space-y-6 text-center">
-            <p>
-              Sabemos que no todo el mundo, vive cerca para venir a competir, o puede permitirse comprar una camiseta. Por eso hemos buscado dar todas las opciones para todo el mundo que quiera colaborar, pueda hacerlo!!
-            </p>
-            <div className="flex justify-center space-x-4">
-              <Link to='/donacion' 
-                
-                className="bg-blue-600 text-white px-6 py-3 rounded-lg shadow-md hover:bg-blue-700 transition"
-              >
-                Apóyame
-              </Link>
-              <a
-                href="https://wod4dreams.es"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-green-600 text-white px-6 py-3 rounded-lg shadow-md hover:bg-green-700 transition"
-              >
-                Más Información del Evento
-              </a>
-                 <Link to='/camiseta'
-                className="bg-gray-600 text-white px-6 py-3 rounded-lg shadow-md hover:bg-gray-700 transition"
-              >
-                Camisetas
-              </Link>
-            </div>
+     <h2 className="text-4xl md:text-5xl font-bold mb-8 text-center">
+  Colabora por esta causa, y ayúdame a ir a games
+</h2>
+<div className="text-lg text-gray-700 leading-relaxed space-y-6 text-center">
+  <p>
+    Sabemos que no todo el mundo, vive cerca para venir a competir, o puede permitirse comprar una camiseta. Por eso hemos buscado dar todas las opciones para todo el mundo que quiera colaborar, pueda hacerlo!!
+  </p>
+  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 justify-items-center">
+    {/* Botón "Apóyame" */}
+    <Link
+      to="/donacion"
+      className="bg-blue-600 text-white px-6 py-3 w-full max-w-xs rounded-lg shadow-md hover:bg-blue-700 transition"
+    >
+      Apóyame
+    </Link>
+
+    {/* Botón "Camisetas" */}
+    <Link
+      to="/camiseta"
+      className="bg-gray-600 text-white px-6 py-3 w-full max-w-xs rounded-lg shadow-md hover:bg-gray-700 transition"
+    >
+      Camisetas
+    </Link>
+
+    {/* Botón "Más Información del Evento" */}
+    <a
+      href="https://wod4dreams.es"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="bg-green-600 text-white px-6 py-3 w-full max-w-xs sm:col-span-2 rounded-lg shadow-md hover:bg-green-700 transition"
+    >
+      Más Información del Evento
+    </a>
+  </div>
+</div>
+
          
-          </div>
         </motion.div>
       </div>
     </section>
