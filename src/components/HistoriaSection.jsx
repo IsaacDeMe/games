@@ -48,14 +48,14 @@ const HistoriaSection = () => {
                     <div className="text-lg text-gray-700 leading-relaxed space-y-6 text-center">
                    
                       <div className="flex justify-center space-x-4">
-                        <Link to="/donacion"
-                          
+                        <a
+                          href='/donacion'
                           target="_blank"
                           rel="noopener noreferrer"
                           className="bg-blue-600 text-white px-6 py-3 rounded-lg shadow-md hover:bg-blue-700 transition"
                         >
                           Apóyame
-                        </Link>
+                        </a>
                         <a
                           href="https://wod4dreams.es"
                           target="_blank"
@@ -64,14 +64,15 @@ const HistoriaSection = () => {
                         >
                           Más Información del Evento
                         </a>
-                           <Link to="/camiseta"
-                          href="https://wod4dreams.es"
+                           <a 
+
+                          href="/camiseta"
                           target="_blank"
                           rel="noopener noreferrer"
                           className="bg-gray-600 text-white px-6 py-3 rounded-lg shadow-md hover:bg-green-700 transition"
                         >
                           Camisetas
-                        </Link>
+                        </a>
                       </div>
                    
                     </div>
