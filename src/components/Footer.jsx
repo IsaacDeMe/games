@@ -78,7 +78,7 @@ const Footer = () => {
 
         <div className="border-t border-gray-800 mt-8 pt-8 text-center">
           <p className="text-gray-400">
-            © 2025 Isaac Delfa Medina. Web programada por mí, si algo funciona mal dímelo porfa.
+            © 2025 Isaac Delfa Medina. Todos los derechos reservados. Web programada por mí, si algo funciona mal dímelo porfa.
           </p>
         </div>
       </div>
