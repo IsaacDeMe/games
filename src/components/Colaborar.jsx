@@ -1,7 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Link } from "react-router-dom";
 
-const ColaborarSinComprarSection = () => {
+const Colaborar = () => {
   return (
     <section id="colaborar" className="py-20 bg-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -12,37 +13,39 @@ const ColaborarSinComprarSection = () => {
           viewport={{ once: true }}
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-8 text-center">
-            Colaborar sin Comprar Camiseta
+            Colabora por esta causa, y ayúdame a ir a games
           </h2>
           <div className="text-lg text-gray-700 leading-relaxed space-y-6 text-center">
             <p>
-              Sabemos que no todo el mundo puede permitirse una camiseta, pero si aún quieres ayudar, 
-              hemos creado un GoFundMe para que puedas realizar un donativo de la cantidad que desees. 
-              Cualquier aporte será de gran ayuda y lo agradecemos de corazón.
+              Sabemos que no todo el mundo, vive cerca para venir a competir, o puede permitirse comprar una camiseta. Por eso hemos buscado dar todas las opciones para todo el mundo que quiera colaborar, pueda hacerlo!!
             </p>
             <div className="flex justify-center space-x-4">
-              <a
-                href="https://gofund.me/91ae41ec"
+              <Link to="/donaciones"
+                
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-blue-600 text-white px-6 py-3 rounded-lg shadow-md hover:bg-blue-700 transition"
               >
-                Donar en GoFundMe
-              </a>
+                Apóyame
+              </Link>
               <a
-                href="https://isaacthrowdown.me"
+                href="https://wod4dreams.es"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-green-600 text-white px-6 py-3 rounded-lg shadow-md hover:bg-green-700 transition"
               >
                 Más Información del Evento
               </a>
+                 <Link to="/camiseta"
+                href="https://wod4dreams.es"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-gray-600 text-white px-6 py-3 rounded-lg shadow-md hover:bg-green-700 transition"
+              >
+                Camisetas
+              </Link>
             </div>
-            <p>
-              Además, si estás cerca de Tarragona, el 9 de agosto te invitamos al Do-Box Fitness Club, donde podrás 
-              competir en equipos de tres o simplemente disfrutar del ambiente y la competición. ¡Habrá un sorteo y 
-              muchas sorpresas para todos los asistentes!
-            </p>
+         
           </div>
         </motion.div>
       </div>
@@ -50,4 +53,4 @@ const ColaborarSinComprarSection = () => {
   );
 };
 
-export default ColaborarSinComprarSection;
+export default Colaborar;

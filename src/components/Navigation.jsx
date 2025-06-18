@@ -10,14 +10,26 @@ const Navigation = () => {
   const menuRef = useRef(null);
 
   const scrollToSection = (sectionId) => {
-    const targetId = sectionId === 'guia-tallas' ? 'guia-tallas-tabla' : sectionId;
-    if (location.pathname !== '/') {
-      navigate('/', { state: { scrollTo: targetId } });
+    if (sectionId === 'competicion') {
+      window.open('https://wod4dreams.es', '_blank'); // Redirige a wod4dreams.es
+    } else if (sectionId === 'donacion' || sectionId === 'camiseta') {
+      navigate(`/${sectionId}`); // Navega a rutas específicas
     } else {
-      document.getElementById(targetId)?.scrollIntoView({ behavior: 'smooth' });
+      if (location.pathname !== '/') {
+        navigate('/', { state: { scrollTo: sectionId } });
+      } else {
+        document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
+      }
     }
     setMobileMenuOpen(false);
   };
+
+  const navItems = [
+    { label: 'Sobre Mí', section: 'historia' },
+    { label: 'Camisetas', section: 'camiseta' },
+    { label: 'Competición', section: 'competicion' },
+    { label: 'Donaciones', section: 'donacion' },
+  ];
 
   useEffect(() => {
     if (location.state?.scrollTo) {
@@ -26,19 +38,10 @@ const Navigation = () => {
         if (element) {
           element.scrollIntoView({ behavior: 'smooth' });
         }
-        navigate(location.pathname, { replace: true, state: {} }); 
+        navigate(location.pathname, { replace: true, state: {} });
       }, 100);
     }
   }, [location, navigate]);
-
- const navItems = [
-  { label: 'Mi Historia', section: 'historia' },
-  { label: 'Funcionamiento de la Reserva', section: 'reserva' } ,// Nuevo elemento
-  { label: 'Camisetas', section: 'camisetas' },
-  { label: 'Guía de Tallas', section: 'guia-tallas' },
-  { label: 'Colaborar', section: 'colaborar' }, // Nueva sección
-];
-
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -57,7 +60,7 @@ const Navigation = () => {
   }, [mobileMenuOpen]);
 
   return (
-    <motion.nav 
+    <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       className="fixed top-0 w-full bg-white/90 backdrop-blur-md z-[100] border-b border-gray-200"
@@ -73,24 +76,24 @@ const Navigation = () => {
               {mobileMenuOpen ? <X className="w-8 h-8" /> : <Menu className="w-8 h-8" />}
             </button>
           </div>
-          
+
           <Link to="/" className="font-bold text-xl md:order-none order-1">
             Isaac Delfa
           </Link>
 
           <div className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
-              <button 
+              <button
                 key={item.section}
-                onClick={() => scrollToSection(item.section)} 
+                onClick={() => scrollToSection(item.section)}
                 className="hover:text-gray-900 transition-colors"
               >
                 {item.label}
               </button>
             ))}
           </div>
-          
-          <div className="md:hidden w-8"> {/* Placeholder para equilibrar el espacio en móvil */}</div>
+
+          <div className="md:hidden w-8"></div>
         </div>
       </div>
 
@@ -101,7 +104,7 @@ const Navigation = () => {
             initial={{ opacity: 0, x: '-100%' }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: '-100%' }}
-            transition={{ duration: 0.3, ease: "easeInOut" }}
+            transition={{ duration: 0.3, ease: 'easeInOut' }}
             className="fixed top-0 left-0 h-screen w-64 bg-white shadow-xl z-[105] md:hidden pt-16"
           >
             <div className="p-6 space-y-6 mt-5">

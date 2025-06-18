@@ -1,24 +1,21 @@
 import React from 'react';
 import Navigation from '@/components/Navigation';
-import HeroSection from '@/components/HeroSection';
-import HistoriaSection from '@/components/HistoriaSection';
 import CamisetasSection from '@/components/CamisetasSection';
-import Colaborar from '@/components/Colaborar';
 import Footer from '@/components/Footer';
 import ReservaSection from '@/components/funcionamientoreserva';
 
 import { Toaster } from "@/components/ui/toaster";
 
-const LandingPage = () => {
+const CamisetasPage = () => {
   return (
     <div className="min-h-screen bg-white text-gray-900">
       <Navigation />
-      <HistoriaSection />
-      <Colaborar /> 
+        <ReservaSection />
+      <CamisetasSection />
       <Footer />
       <Toaster />
     </div>
   );
 };
 
-export default LandingPage;
+export default CamisetasPage;

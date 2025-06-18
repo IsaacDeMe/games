@@ -11,21 +11,22 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-3 gap-8">
           <div>
-            <span className="text-xl font-bold mb-4 block">Navegación</span>
-            <div className="space-y-2">
-              <button onClick={() => scrollToSection('historia')} className="block hover:text-gray-300 transition-colors">
-                Mi Historia
-              </button>
-              <button onClick={() => scrollToSection('reserva')} className="block hover:text-gray-300 transition-colors">
-                Funcionamiento de la reserva, envío,pago...             </button>
-              <button onClick={() => scrollToSection('camisetas')} className="block hover:text-gray-300 transition-colors">
-                Camisetas
-              </button>
-<button onClick={() => scrollToSection('guia-tallas-tabla')} className="block hover:text-gray-300 transition-colors">
-                Guia de tallas
-              </button>
-            </div>
-          </div>
+  <span className="text-xl font-bold mb-4 block">Navegación</span>
+  <div className="space-y-2">
+    <button onClick={() => window.open('https://isaacgames.es', '_blank')} className="block hover:text-gray-300 transition-colors">
+      Sobre Mí
+    </button>
+    <button onClick={() => navigate('/camiseta')} className="block hover:text-gray-300 transition-colors">
+      Camisetas
+    </button>
+    <button onClick={() => window.open('https://wod4dreams.es', '_blank')} className="block hover:text-gray-300 transition-colors">
+      Competición
+    </button>
+    <button onClick={() => navigate('/donacion')} className="block hover:text-gray-300 transition-colors">
+      Donaciones
+    </button>
+  </div>
+</div>
 
           <div>
             <span className="text-xl font-bold mb-4 block">Redes Sociales</span>
@@ -77,7 +78,7 @@ const Footer = () => {
 
         <div className="border-t border-gray-800 mt-8 pt-8 text-center">
           <p className="text-gray-400">
-            © 2025 Isaac Delfa Medina. Todos los derechos reservados.
+            © 2025 Isaac Delfa Medina. Web programada por mí, si algo funciona mal dímelo porfa.
           </p>
         </div>
       </div>
