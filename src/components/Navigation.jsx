@@ -27,7 +27,6 @@ const Navigation = () => {
   const navItems = [
     { label: 'Sobre Mí', section: 'historia' },
     { label: 'Camisetas', section: 'camiseta' },
-    { label: 'Competición', section: 'competicion' },
     { label: 'Donaciones', section: 'donacion' },
   ];
 

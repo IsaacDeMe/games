@@ -40,12 +40,7 @@ const Footer = () => {
               >
                 Camisetas
               </button>
-              <button
-                onClick={() => scrollToSection('competicion')}
-                className="block hover:text-gray-300 transition-colors"
-              >
-                Competición
-              </button>
+              
               <button
                 onClick={() => scrollToSection('donacion')}
                 className="block hover:text-gray-300 transition-colors"
