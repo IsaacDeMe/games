@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Send, ChevronLeft, ChevronRight, ExternalLink, Copy } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Copy, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Label } from '@/components/ui/label';
 import { Input } from '@/components/ui/input';
@@ -18,7 +18,6 @@ const galleryImages = [
   'https://storage.googleapis.com/hostinger-horizons-assets-prod/2f2824b7-ecd0-4c8d-aa7c-77ae22631a7c/64be2c31d725ca01a0494ce8587bddbd.jpg',
   'https://storage.googleapis.com/hostinger-horizons-assets-prod/2f2824b7-ecd0-4c8d-aa7c-77ae22631a7c/f40a46bb34dab59dbe71d5eeaaf661d6.jpg',
   'https://storage.googleapis.com/hostinger-horizons-assets-prod/2f2824b7-ecd0-4c8d-aa7c-77ae22631a7c/d626d5ed220fb8bbcda5b5c312d9da48.png',
-
 ];
 
 const imageDetails = [
@@ -29,13 +28,8 @@ const imageDetails = [
 ];
 
 const ImageGallery = ({ currentImageIndex, setCurrentImageIndex }) => {
-  const prevImage = () => {
-    setCurrentImageIndex((prev) => (prev === 0 ? galleryImages.length - 1 : prev - 1));
-  };
-
-  const nextImage = () => {
-    setCurrentImageIndex((prev) => (prev === galleryImages.length - 1 ? 0 : prev + 1));
-  };
+  const prevImage = () => setCurrentImageIndex((prev) => (prev === 0 ? galleryImages.length - 1 : prev - 1));
+  const nextImage = () => setCurrentImageIndex((prev) => (prev === galleryImages.length - 1 ? 0 : prev + 1));
 
   return (
     <div className="w-full">
@@ -47,20 +41,10 @@ const ImageGallery = ({ currentImageIndex, setCurrentImageIndex }) => {
         />
       </div>
       <div className="flex justify-center gap-4 mt-4">
-        <Button
-          variant="outline"
-          size="icon"
-          onClick={prevImage}
-          className="bg-black text-white"
-        >
+        <Button variant="outline" size="icon" onClick={prevImage} className="bg-black text-white">
           <ChevronLeft className="w-6 h-6" />
         </Button>
-        <Button
-          variant="outline"
-          size="icon"
-          onClick={nextImage}
-          className="bg-black text-white"
-        >
+        <Button variant="outline" size="icon" onClick={nextImage} className="bg-black text-white">
           <ChevronRight className="w-6 h-6" />
         </Button>
       </div>
@@ -83,7 +67,7 @@ const MessageGeneratorForm = () => {
     setSelectedColor(imageDetails[currentImageIndex].color);
   }, [currentImageIndex]);
 
-  const handleGenerateMessage = () => {
+  const handleAction = () => {
     if (!name || !selectedSize || !location) {
       toast({
         title: "Error",
@@ -95,153 +79,79 @@ const MessageGeneratorForm = () => {
 
     const message = `Nombre: ${name}\nTalla: ${selectedSize}\nDiseño: ${selectedDesign}\nColor: ${selectedColor}\nDe donde soy: ${location}`;
     setGeneratedMessage(message);
-    toast({
-      title: "Mensaje Generado",
-      description: "¡Ahora puedes copiar el mensaje y unirte al grupo!",
-    });
-  };
 
-  const copyToClipboardAndOpenGroup = () => {
-    if (generatedMessage) {
-      navigator.clipboard.writeText(generatedMessage).then(() => {
-        toast({
-          title: "Copiado",
-          description: "Mensaje copiado al portapapeles.",
-        });
-        window.open('https://chat.whatsapp.com/H4LktNrJ1em1wXutlVQNpq', '_blank');
-      }).catch(err => {
-        toast({
-          title: "Error al copiar",
-          description: "No se pudo copiar el mensaje. Por favor, cópialo manualmente.",
-          variant: "destructive",
-        });
-        window.open('https://chat.whatsapp.com/H4LktNrJ1em1wXutlVQNpq', '_blank');
+    navigator.clipboard.writeText(message).then(() => {
+      toast({
+        title: "Mensaje copiado",
+        description: "Se ha copiado al portapapeles.",
       });
-    } else {
-       toast({
-          title: "Error",
-          description: "Primero genera un mensaje.",
-          variant: "destructive",
-        });
-    }
+      window.open('https://chat.whatsapp.com/H4LktNrJ1em1wXutlVQNpq', '_blank');
+    }).catch(() => {
+      toast({
+        title: "Error al copiar",
+        description: "No se pudo copiar el mensaje.",
+        variant: "destructive",
+      });
+    });
   };
 
   return (
     <>
       <div className="w-full lg:w-3/5 mb-8 lg:mb-0">
         <h3 className="text-2xl font-bold mb-6 text-center">Galería de Diseños</h3>
-                  <h3 className="text-2xl font-bold mb-6 text-center text-green-600">PVP 18€</h3>
-
+        <h3 className="text-2xl font-bold mb-6 text-center text-green-600">PVP 18€</h3>
         <ImageGallery currentImageIndex={currentImageIndex} setCurrentImageIndex={setCurrentImageIndex} />
-
       </div>
-      
+
       <div className="w-full lg:w-2/5 space-y-6">
-        <h3 className="text-2xl font-bold">Mensaje para el grupo</h3>
-        
+        <h3 className="text-2xl font-bold">Formulario</h3>
+
         <div className="space-y-4">
           <div>
-            <Label htmlFor="name" className="block text-sm font-medium mb-1">Nombre</Label>
-            <Input
-              id="name"
-              type="text"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              placeholder="Tu nombre completo"
-              className="w-full p-4 h-10"
-            />
+            <Label htmlFor="name">Nombre</Label>
+            <Input id="name" type="text" value={name} onChange={(e) => setName(e.target.value)} placeholder="Tu nombre completo" />
           </div>
 
           <div>
-            <Label htmlFor="size" className="block text-sm font-medium mb-1">Talla</Label>
+            <Label htmlFor="size">Talla</Label>
             <Select value={selectedSize} onValueChange={setSelectedSize}>
-             <SelectTrigger className="w-full max-w-[250] p-3 h-auto text-sm border rounded-md">
-
+              <SelectTrigger className="w-full">
                 <SelectValue placeholder="Selecciona una talla" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="XS">XS</SelectItem>
-                <SelectItem value="S">S</SelectItem>
-                <SelectItem value="M">M</SelectItem>
-                <SelectItem value="L">L</SelectItem>
-                <SelectItem value="XL">XL</SelectItem>
-                <SelectItem value="XXL">XXL</SelectItem>
-                <SelectItem value="3XL">3XL</SelectItem>
-                <SelectItem value="4XL">4XL</SelectItem>
-                <SelectItem value="5XL">5XL</SelectItem>
+                {["XS", "S", "M", "L", "XL", "XXL", "3XL", "4XL", "5XL"].map(size => (
+                  <SelectItem key={size} value={size}>{size}</SelectItem>
+                ))}
               </SelectContent>
             </Select>
           </div>
 
           <div>
-            <Label htmlFor="design" className="block text-sm font-medium mb-1">Diseño Seleccionado</Label>
-            <Input
-              id="design"
-              type="text"
-              value={selectedDesign}
-              readOnly
-              className="w-full p-3 bg-gray-100 cursor-not-allowed h-10"
-            />
-            <p className="text-xs text-gray-500 mt-1">(Pasa la imagen hasta el diseño que te gusta)</p>
+            <Label>Diseño Seleccionado</Label>
+            <Input value={selectedDesign} readOnly className="bg-gray-100 cursor-not-allowed" />
           </div>
 
           <div>
-            <Label htmlFor="color" className="block text-sm font-medium mb-1">Color de la camiseta</Label>
-            <Input
-              id="color"
-              type="text"
-              value={selectedColor}
-              readOnly
-              className="w-full p-3 bg-gray-100 cursor-not-allowed h-10"
-            />
-             <p className="text-xs text-gray-500 mt-1">(Pasa la imagen hasta el diseño que te gusta)</p>
+            <Label>Color</Label>
+            <Input value={selectedColor} readOnly className="bg-gray-100 cursor-not-allowed" />
           </div>
-          
+
           <div>
-            <Label htmlFor="location" className="block text-sm font-medium mb-1">¿Eres de aquí o de fuera? ¿De dónde?</Label>
-            <Input
-              id="location"
-              type="text"
-              value={location}
-              onChange={(e) => setLocation(e.target.value)}
-              placeholder="Ej: El Vendrell, Barcelona, etc."
-              className="w-full p-3 h-10"
-            />
+            <Label>¿De dónde eres?</Label>
+            <Input value={location} onChange={(e) => setLocation(e.target.value)} placeholder="Ej: El Vendrell, Barcelona..." />
           </div>
 
           <Button 
-            onClick={handleGenerateMessage}
-            className="w-full bg-black hover:bg-gray-800 text-white py-3 text-lg h-11"
-            size="lg"
+            onClick={handleAction}
+            className="w-full bg-green-600 hover:bg-green-700 text-white py-3 text-lg flex items-center justify-center gap-2"
           >
-            Generar Mensaje
-            <Send className="ml-2 w-5 h-5" />
+            Copiar mensaje y entrar al grupo
+            <Copy className="w-4 h-4" />
+            <ExternalLink className="w-4 h-4" />
           </Button>
 
-          {generatedMessage && (
-            <div className="mt-6 p-4 border border-gray-300 rounded-lg bg-gray-50">
-              <h4 className="text-md font-semibold mb-2">Mensaje Generado:</h4>
-              <Textarea
-                value={generatedMessage}
-                readOnly
-                rows={5}
-                className="w-full p-2 border-gray-300 rounded-md focus:ring-0 focus:border-gray-300"
-              />
-            </div>
-          )}
-          
-          <Button 
-            onClick={copyToClipboardAndOpenGroup}
-            className="w-full bg-green-500 hover:bg-green-600 text-white py-3 text-lg h-15"
-            size="lg"
-            disabled={!generatedMessage}
-          >
-            Entrar al Grupo y Copiar Mensaje
-            <Copy className="ml-2 w-4 h-4" />
-            <ExternalLink className="ml-1 w-4 h-4" />
-          </Button>
-          <p className="text-sm text-gray-600 mt-1 text-center">
-            Genera el mensaje para enviarlo al grupo. Después dale a "Entrar al Grupo y Copiar Mensaje", pega el mensaje y envíalo. Nosotros te añadiremos a la lista. Después, cuando hayas realizado el Bizum al 647709145, avisa por el grupo y te pondremos el icono de pagado. Para saber la cantidad a pagar leete la información de pago, es diferente si eres local o de fuera, por el tema de envío.
+          <p className="text-sm text-gray-600 mt-2 text-center">
+            Después de rellenar la info, entra al grupo y pega lo que se te copiará en el portapapeles.
           </p>
         </div>
       </div>
