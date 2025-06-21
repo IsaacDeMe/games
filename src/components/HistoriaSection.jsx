@@ -38,7 +38,7 @@ const HistoriaSection = () => {
               Pero tristemente siempre entra un tercer factor, que es el <span className="font-semibold">económico</span>. Para mí es un sueño cumplido clasificar a Games, pero la realidad es que económicamente no puedo permitírmelo. Competiciones como esta las pagamos los propios competidores, y participar en los Games supone un gasto muy elevado tanto en desplazamiento como en competición.
             </p>
             <p className="text-center">
-              Por este motivo hemos creado iniciativas como la <span className="font-semibold">venta de camisetas</span> , la <span className="font-semibold">competición benéfica</span> o la <span className="font-semibold">donación</span>. 
+              Por este motivo hemos creado iniciativas como la <span className="font-semibold">venta de camisetas</span>  o la <span className="font-semibold">donación</span>. 
               Porqué confío en la fuerza de la comunidad, que siempre ha demostrado ser un pilar fundamental para los atletas como yo. ¡Gracias por tu apoyo!
             </p>
           </div>
